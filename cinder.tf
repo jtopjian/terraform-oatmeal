@@ -6,7 +6,7 @@ resource "lxd_container" "cinder" {
   image     = "ubuntu"
   ephemeral = false
 
-  config {
+  config = {
     "security.privileged" = "true"
     "raw.lxc"             = "lxc.apparmor.profile=unconfined"
   }
@@ -15,7 +15,7 @@ resource "lxd_container" "cinder" {
     name = "modules"
     type = "disk"
 
-    properties {
+    properties = {
       source = "/lib/modules"
       path   = "/lib/modules"
     }

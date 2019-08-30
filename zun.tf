@@ -41,7 +41,7 @@ resource "lxd_container" "z01" {
   image     = "ubuntu"
   ephemeral = false
 
-  config {
+  config = {
     "security.privileged" = "true"
     "raw.lxc"             = "lxc.apparmor.profile=unconfined"
   }
@@ -50,7 +50,7 @@ resource "lxd_container" "z01" {
     name = "modules"
     type = "disk"
 
-    properties {
+    properties = {
       source = "/lib/modules"
       path   = "/lib/modules"
     }

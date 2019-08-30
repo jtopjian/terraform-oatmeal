@@ -6,7 +6,7 @@ resource "lxd_container" "neutron" {
   image     = "ubuntu"
   ephemeral = false
 
-  config {
+  config = {
     "security.privileged" = "true"
     "raw.lxc"             = "lxc.apparmor.profile=unconfined"
   }

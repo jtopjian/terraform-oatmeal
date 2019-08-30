@@ -6,7 +6,7 @@ resource "lxd_container" "nova" {
   image     = "ubuntu"
   ephemeral = false
 
-  config {
+  config = {
     "security.privileged" = "true"
   }
 
@@ -57,7 +57,7 @@ resource "lxd_container" "c01" {
   image     = "ubuntu"
   ephemeral = false
 
-  config {
+  config = {
     "security.privileged" = "true"
     "raw.lxc"             = "lxc.apparmor.profile=unconfined"
 
@@ -68,7 +68,7 @@ resource "lxd_container" "c01" {
     name = "kvm"
     type = "unix-char"
 
-    properties {
+    properties = {
       path = "/dev/kvm"
     }
   }
@@ -77,7 +77,7 @@ resource "lxd_container" "c01" {
     name = "control"
     type = "unix-char"
 
-    properties {
+    properties = {
       path = "/dev/mapper/control"
     }
   }
@@ -86,7 +86,7 @@ resource "lxd_container" "c01" {
     name = "modules"
     type = "disk"
 
-    properties {
+    properties = {
       source = "/lib/modules"
       path   = "/lib/modules"
     }

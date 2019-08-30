@@ -6,7 +6,7 @@ resource "lxd_container" "swift" {
   image     = "ubuntu"
   ephemeral = false
 
-  config {
+  config = {
     "security.privileged" = "true"
     "raw.lxc"             = "lxc.apparmor.profile=unconfined"
   }
@@ -15,7 +15,7 @@ resource "lxd_container" "swift" {
     name = "loop2"
     type = "unix-block"
 
-    properties {
+    properties = {
       path = "/dev/loop2"
     }
   }
@@ -24,7 +24,7 @@ resource "lxd_container" "swift" {
     name = "loop3"
     type = "unix-block"
 
-    properties {
+    properties = {
       path = "/dev/loop3"
     }
   }
@@ -33,7 +33,7 @@ resource "lxd_container" "swift" {
     name = "loop4"
     type = "unix-block"
 
-    properties {
+    properties = {
       path = "/dev/loop4"
     }
   }
@@ -42,7 +42,7 @@ resource "lxd_container" "swift" {
     name = "loop5"
     type = "unix-block"
 
-    properties {
+    properties = {
       path = "/dev/loop5"
     }
   }
@@ -51,7 +51,7 @@ resource "lxd_container" "swift" {
     name = "loop6"
     type = "unix-block"
 
-    properties {
+    properties = {
       path = "/dev/loop6"
     }
   }
@@ -60,7 +60,7 @@ resource "lxd_container" "swift" {
     name = "loop7"
     type = "unix-block"
 
-    properties {
+    properties = {
       path = "/dev/loop7"
     }
   }
@@ -69,7 +69,7 @@ resource "lxd_container" "swift" {
     name = "loop-control"
     type = "unix-char"
 
-    properties {
+    properties = {
       path = "/dev/loop-control"
     }
   }
