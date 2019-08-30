@@ -21,6 +21,51 @@ resource "lxd_container" "swift" {
   }
 
   device {
+    name = "loop3"
+    type = "unix-block"
+
+    properties {
+      path = "/dev/loop3"
+    }
+  }
+
+  device {
+    name = "loop4"
+    type = "unix-block"
+
+    properties {
+      path = "/dev/loop4"
+    }
+  }
+
+  device {
+    name = "loop5"
+    type = "unix-block"
+
+    properties {
+      path = "/dev/loop5"
+    }
+  }
+
+  device {
+    name = "loop6"
+    type = "unix-block"
+
+    properties {
+      path = "/dev/loop6"
+    }
+  }
+
+  device {
+    name = "loop7"
+    type = "unix-block"
+
+    properties {
+      path = "/dev/loop7"
+    }
+  }
+
+  device {
     name = "loop-control"
     type = "unix-char"
 
